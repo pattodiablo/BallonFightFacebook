@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta charset="UTF-8" />
+<meta name=viewport content="width=device-width, initial-scale=1, maximun-scale=1.0, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="full-screen" content="yes">
+<meta name="screen-orientation" content="portrait"> 
+<link rel="shortcut icon" href="favicon.ico">
+
+<title>BallonFight</title>
+<script src="https://connect.facebook.net/en_US/fbinstant.6.2.js"></script>
+<script src="lib/phaser-facebook-instant-games.js"></script>
+<script src="lib/phaser.js"></script>
+<script src="js/Main.js"></script>
+<script src="js/PlatformerBehavior.js"></script>
+<script src="assets/canvas/GameSounds.js"></script>
+<script src="assets/canvas/Boot.js"></script>
+<script src="assets/canvas/Level.js"></script>
+<script src="assets/canvas/Level2.js"></script>
+<script src="assets/canvas/Level3.js"></script>
+<script src="assets/canvas/Level4.js"></script>
+<script src="assets/canvas/Level5.js"></script>
+<script src="assets/canvas/Level6.js"></script>
+<script src="assets/canvas/Level7.js"></script>
+<script src="assets/canvas/Level8.js"></script>
+<script src="assets/canvas/Level9.js"></script>
+<script src="assets/canvas/Level10.js"></script>
+<script src="assets/canvas/Level11.js"></script>
+<script src="assets/canvas/Level12.js"></script>
+<script src="assets/canvas/Level13.js"></script>
+<script src="assets/canvas/Level14.js"></script>
+<script src="assets/canvas/Level15.js"></script>
+<script src="assets/canvas/Level16.js"></script>
+<script src="assets/canvas/Level17.js"></script>
+<script src="assets/canvas/Level18.js"></script>
+<script src="assets/canvas/Level19.js"></script>
+<script src="assets/canvas/Level20.js"></script>
+<script src="assets/canvas/Level21.js"></script>
+<script src="assets/canvas/IntroScene.js"></script>
+<script src="assets/canvas/goverScene.js"></script>
+
+
+
+<style>
+body {
+	background: #000;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+
+
+#turn{
+				width:100%;
+				height:100%;
+				position:fixed;
+				top:0px;
+				left:0px;
+				background-color:#000;
+				background-image:url('assets/sprites/playportrait.png');
+				background-repeat:no-repeat;
+				background-position: center center;
+				display:none;
+			}
+#CloseBtn{
+
+			   background: #7D3B85;
+               font: 3em arial;
+               padding: 2% 4% 2% 4%;
+               color:white;
+               text-decoration: none;
+              position: fixed;;
+          	  right:0px;
+              top: 0px;
+              z-index:1000;
+               cursor:pointer;
+}
+			
+</style>
+
+</head>
+<body>
+<div id = "turn"></div>
+<script type="text/javascript">
+
+var showingAd = true;
+
+ if (document.getElementById("ap_iframe")){
+	
+  	document.getElementById("ap_iframe").style.visibility="hidden";
+    document.body.innerHTML += "<div id = 'CloseBtn' onclick = 'hideAd()'>Close</div>";
+  
+   CloseBtn.style.visibility="hidden"; 
+    	
+    showingAd = false;
+
+          }
+
+function showAd (){
+
+
+	CloseBtn.style.visibility="visible";
+
+ 	document.getElementById("ap_iframe").style.visibility="visible"; 
+
+	 
+	
+	 showingAd = true;
+
+
+ }
+
+function hideAd (){
+	 console.log("cerrando");
+
+	 document.getElementById("ap_iframe").style.visibility="hidden";
+	 CloseBtn.style.visibility="hidden";
+	 showingAd = false;
+
+
+ }
+
+</script>
+
+</body>
+</html>
