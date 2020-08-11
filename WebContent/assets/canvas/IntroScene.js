@@ -25,6 +25,7 @@ IntroScene.prototype.init = function () {
 	this.scale.scaleMode = Phaser.ScaleManager.USER_SCALE;
 	this.scale.pageAlignHorizontally = true;
 	this.scale.pageAlignVertically = true;
+	this.stage.backgroundColor = '#77c0fc';
 	
 	this.myInit();
 	
@@ -32,20 +33,47 @@ IntroScene.prototype.init = function () {
 
 IntroScene.prototype.preload = function () {
 	
-	this.load.pack('Ground', 'assets/eviroment.json');
+	this.load.pack('images', 'assets/introResources.json');
 	
 	this.myPreload();
 	
 };
 
 IntroScene.prototype.create = function () {
-	var _introScene1 = this.add.sprite(0.0, 0.0, 'introScene1');
+	var _iniBg = this.add.sprite(47.0, 0.0, 'iniBg');
+	_iniBg.scale.set(0.5, 0.5);
+	
+	var _coins = this.add.group();
+	
+	var _coinInicio = this.add.sprite(42.0, -92.0, 'coinInicio', null, _coins);
+	_coinInicio.scale.set(0.5, 0.5);
+	
+	var _playBtn = this.add.button(320.0, 773.0, 'playBtn', null, this, null, null, null, null);
+	_playBtn.scale.set(0.5, 0.5);
+	_playBtn.anchor.set(0.5, 0.5);
+	
+	var _mountains = this.add.sprite(-90.0, 900.0, 'mountains');
+	_mountains.scale.set(0.5, 0.5);
+	
+	var _kittenInicio = this.add.sprite(280.0, 453.0, 'kittenInicio');
+	_kittenInicio.scale.set(0.5, 0.5);
+	_kittenInicio.anchor.set(0.5, 0.5);
+	
+	var _kitten2inicio = this.add.sprite(466.0, 353.0, 'kitten2inicio');
+	_kitten2inicio.scale.set(0.5, 0.5);
+	
+	var _kitten3Inicio = this.add.sprite(31.0, 274.0, 'kitten3Inicio');
+	_kitten3Inicio.scale.set(0.5, 0.5);
 	
 	
 	
 	// fields
 	
-	this.fIntroScene1 = _introScene1;
+	this.fCoins = _coins;
+	this.fPlayBtn = _playBtn;
+	this.fKittenInicio = _kittenInicio;
+	this.fKitten2inicio = _kitten2inicio;
+	this.fKitten3Inicio = _kitten3Inicio;
 		this.myCreate();
 	
 };
@@ -64,22 +92,67 @@ IntroScene.prototype.myPreload = function () {
 IntroScene.prototype.myInit = function () {
 
 
-	
+	this.scale.pageAlignHorizontally = true;
+	this.scale.pageAlignVertically = true;
 	
 };
 
 IntroScene.prototype.myCreate = function () {
 	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-	this.fIntroScene1.inputEnabled = true;
-	this.fIntroScene1.events.onInputDown.add﻿(this.iniciarJuego, this);
+	
+	this.fPlayBtn.events.onInputDown.add﻿(this.iniciarJuego, this);
+	 
+	var tweenBtn = this.game.add.tween(this.fPlayBtn.scale).to( {x: 0.51, y:0.51}, 500, Phaser.Easing.Sinusoidal.InOut, true);
+	var tween2Btn = this.game.add.tween(this.fPlayBtn.scale).to( {x: 0.5, y:0.5}, 500, Phaser.Easing.Sinusoidal.InOut, true);
+	
+	tweenBtn.chain(tween2Btn);
+	tween2Btn.chain(tweenBtn);
+	tweenBtn.start();
+	
+	
+	var kittenTween = this.game.add.tween(this.fKittenInicio.scale).to( {x: 0.51, y:0.51}, 500, Phaser.Easing.Sinusoidal.InOut, true);
+	var kittenTween2 = this.game.add.tween(this.fKittenInicio.scale).to( {x: 0.5, y:0.5}, 500, Phaser.Easing.Sinusoidal.InOut, true);
+	
+	kittenTween.chain(kittenTween2);
+	kittenTween2.chain(kittenTween);
+	kittenTween.start();
+	
+	var kittenTween3 = this.game.add.tween(this.fKittenInicio).to(  { y: this.fKittenInicio.y+5 }, 1000, Phaser.Easing.Sinusoidal.InOut, true);
+	var kittenTween4 = this.game.add.tween(this.fKittenInicio).to(  {  y: this.fKittenInicio.y-5}, 1000, Phaser.Easing.Sinusoidal.InOut, true);
+	
+	kittenTween3.chain(kittenTween4);
+	kittenTween4.chain(kittenTween3);
+	kittenTween3.start();
+	
+	for (var i=0; i<=10; i++){
+		var coin = this.add.sprite(this.game.width*Math.random(), -900*Math.random(), 'coinInicio', null, this.fCoins);
+		coin.scale.set(Math.random()*0.8);
+		
+	}
 	
 	
 };
 IntroScene.prototype.iniciarJuego = function () {
 
 	
-
 	this.state.start("Level", true, true, 3);
+	
+};
+
+IntroScene.prototype.update = function () {
+
+	
+	this.fCoins.forEach(function(coin) {
+
+	       coin.y+=2;
+	       if(coin.y>coin.game.height+100){
+	    	   coin.y = -100;
+	    	   coin.x =coin.game.width*Math.random();
+	       }
+	        
+	    });
+
+
 	
 };
 

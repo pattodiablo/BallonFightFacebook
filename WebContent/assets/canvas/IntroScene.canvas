@@ -9,9 +9,9 @@
     "lang": "JAVA_SCRIPT",
     "baseClass": "Phaser.State",
     "backgroundColor": [
-      0,
-      0,
-      0
+      119,
+      192,
+      252
     ],
     "gridColor": [
       200,
@@ -28,9 +28,9 @@
     "pageAlignHorizontally": true,
     "pageAlignVertically": true,
     "stageBackgroundColor": [
-      0,
-      0,
-      0
+      119,
+      192,
+      252
     ],
     "autoLoad": true,
     "preloadSpriteId": "",
@@ -43,22 +43,147 @@
     "info": {
       "editorName": "introScene",
       "setAll": [],
-      "children": [{
-        "type": "image",
-        "id": "c6fca6e9-eaa9-44c4-828e-1d651247adde",
-        "asset": "0",
-        "info": {
-          "editorName": "introScene1",
-          "editorField": true
+      "children": [
+        {
+          "type": "image",
+          "id": "6e8018b9-94c2-4764-a898-eb76b91be80f",
+          "asset": "0",
+          "info": {
+            "editorName": "iniBg",
+            "x": 47,
+            "scale.x": 0.5,
+            "scale.y": 0.5
+          }
+        },
+        {
+          "type": "group",
+          "id": "f759d6fe-eb6e-4cf2-8c73-6cbff00970a6",
+          "info": {
+            "editorName": "coins",
+            "editorField": true,
+            "setAll": [],
+            "children": [{
+              "type": "image",
+              "id": "f36282b2-f7be-47d4-b344-63791a4ab9d6",
+              "asset": "1",
+              "info": {
+                "editorName": "coinInicio",
+                "x": 42,
+                "y": -92,
+                "scale.x": 0.5,
+                "scale.y": 0.5
+              }
+            }]
+          }
+        },
+        {
+          "type": "button",
+          "id": "14780ab7-964d-4a16-b4d9-39ff72b95377",
+          "asset": "2",
+          "info": {
+            "editorName": "playBtn",
+            "editorField": true,
+            "x": 320,
+            "y": 773,
+            "scale.x": 0.5,
+            "scale.y": 0.5,
+            "anchor.x": 0.5,
+            "anchor.y": 0.5
+          }
+        },
+        {
+          "type": "image",
+          "id": "97512f74-1c46-4e45-996c-37b3fe3be574",
+          "asset": "3",
+          "info": {
+            "editorName": "mountains",
+            "x": -90,
+            "y": 900,
+            "scale.x": 0.5,
+            "scale.y": 0.5
+          }
+        },
+        {
+          "type": "image",
+          "id": "2b8431dd-4b80-4c2e-a676-5b5d6620e1b7",
+          "asset": "4",
+          "info": {
+            "editorName": "kittenInicio",
+            "editorField": true,
+            "x": 280,
+            "y": 453,
+            "scale.x": 0.5,
+            "scale.y": 0.5,
+            "anchor.x": 0.5,
+            "anchor.y": 0.5
+          }
+        },
+        {
+          "type": "image",
+          "id": "3bc5da53-6801-4625-b19c-71e85ae4acfe",
+          "asset": "5",
+          "info": {
+            "editorName": "kitten2inicio",
+            "editorField": true,
+            "x": 466,
+            "y": 353,
+            "scale.x": 0.5,
+            "scale.y": 0.5
+          }
+        },
+        {
+          "type": "image",
+          "id": "7078f0ae-c989-41ea-82e8-21a912457ac4",
+          "asset": "6",
+          "info": {
+            "editorName": "kitten3Inicio",
+            "editorField": true,
+            "x": 31,
+            "y": 274,
+            "scale.x": 0.5,
+            "scale.y": 0.5
+          }
         }
-      }]
+      ]
     }
   },
   "type": "STATE",
-  "asset-table": {"0": {
-    "file": "WebContent/assets/eviroment.json",
-    "section": "Ground",
-    "asset": "introScene1"
-  }},
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/introResources.json",
+      "section": "images",
+      "asset": "iniBg"
+    },
+    "1": {
+      "file": "WebContent/assets/introResources.json",
+      "section": "images",
+      "asset": "coinInicio"
+    },
+    "2": {
+      "file": "WebContent/assets/introResources.json",
+      "section": "images",
+      "asset": "playBtn"
+    },
+    "3": {
+      "file": "WebContent/assets/introResources.json",
+      "section": "images",
+      "asset": "mountains"
+    },
+    "4": {
+      "file": "WebContent/assets/introResources.json",
+      "section": "images",
+      "asset": "kittenInicio"
+    },
+    "5": {
+      "file": "WebContent/assets/introResources.json",
+      "section": "images",
+      "asset": "kitten2inicio"
+    },
+    "6": {
+      "file": "WebContent/assets/introResources.json",
+      "section": "images",
+      "asset": "kitten3Inicio"
+    }
+  },
   "prefab-table": {}
 }

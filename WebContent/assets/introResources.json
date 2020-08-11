@@ -1,0 +1,53 @@
+{
+  "images": [
+    {
+      "type": "image",
+      "key": "coinInicio",
+      "url": "assets/sprites/coinInicio.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "kitten2inicio",
+      "url": "assets/sprites/kitten2inicio.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "kitten3Inicio",
+      "url": "assets/sprites/kitten3Inicio.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "kittenInicio",
+      "url": "assets/sprites/kittenInicio.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "playBtn",
+      "url": "assets/sprites/playBtn.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "mountains",
+      "url": "assets/sprites/mountains.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "iniBg",
+      "url": "assets/sprites/iniBg.png",
+      "overwrite": false
+    }
+  ],
+  "meta": {
+    "generated": "1597050947677",
+    "app": "Phaser Editor",
+    "url": "http://phasereditor.boniatillo.com",
+    "version": "1.0",
+    "copyright": "Arian Fornaris (c) 2015,2016"
+  }
+}
